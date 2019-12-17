@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息thymeleaf</title>
+</head>
+<script src="jquery/jquery-3.3.1.min.js" th:href="@{/jquery/jquery-3.3.1.min.js}"></script>
+<script>
+    $(function () {
+
+    })
+
+</script>
+<body>
+<h1>用户信息</h1>
+    <table border="1">
+        <tr th:each="user : ${allUser}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.userId}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.phone}"></td>
+            <td th:text="${user.nickname}"></td>
+            <td th:text="${user.headimgurl}"></td>
+            <td th:text="${user.wxOpenid}"></td>
+            <td th:text="${#dates.format(user.regtime,'yyyy-MM-dd HH:mm:ss')}"></td>
+            <td th:text="${user.status}"></td>
+        </tr>
+    </table>
+</body>
+</html>
